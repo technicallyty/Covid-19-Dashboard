@@ -20,16 +20,13 @@ function Globe() {
     var markers2 = [];
     for (var i = 0; i < 220; i++) {
       var color = "red";
-      if (countries[i].active > 1000000) {
-        color = "red";
-      }
       if (countries[i].active < 1000000 && countries[i].active > 500000) {
         color = "yellow";
       }
-      if (countries[i].active < 500000) {
+      else if (countries[i].active < 500000) {
         color = "blue";
       }
-      if (countries[i].active === 0) {
+      else if (countries[i].active === 0) {
         color = "green";
       }
       markers2.push({
