@@ -19,16 +19,23 @@ function Globe() {
     const countries = await response.json();
     var markers2 = [];
     for (var i = 0; i < 220; i++) {
-      var color = "red";
-      if (countries[i].active < 1000000 && countries[i].active > 500000) {
-        color = "yellow";
+      let color;
+      if(countries[i].active > 1000000) {
+        color = "#a50f15";
       }
-      else if (countries[i].active < 500000) {
-        color = "blue";
+      else if (countries[i].active > 500000) {
+        color = "#fb6a4a";
       }
-      else if (countries[i].active === 0) {
-        color = "green";
+      else if (countries[i].active > 100000) {
+        color = "#da8b6f";
+      } 
+      else if (countries[i].active > 50000) {
+        color = "#fac5ad";
       }
+      else {
+        color = "rgb(158, 223, 253)a";
+      }
+      
       markers2.push({
         id: "marker" + i,
         city: countries[i].country,
@@ -50,18 +57,9 @@ function Globe() {
   return (
     <ReactGlobe
       height="100vh"
+      wid
       markers={markers}
       options={options}
-      onClickMarker={(marker, markerObject, event) =>
-        console.log(marker, markerObject, event)
-      }
-      onMouseOutMarker={(marker, markerObject, event) =>
-        console.log(marker, markerObject, event)
-      }
-      onGlobeTextureLoaded={() => console.log("globe loaded")}
-      onMouseOverMarker={(marker, markerObject, event) =>
-        console.log(marker, markerObject, event)
-      }
     />
   );
 }

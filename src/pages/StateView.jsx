@@ -19,13 +19,13 @@ const StateView = () => {
     var re = await hist.json();
     const data = re.reverse().splice(re.length - 30);
     setStateHistory(data);
-    console.log(res);
     setStateData(res);
   }
 
   const getAllStateData = async() => {
     const response = await fetch("https://api.covidtracking.com/v1/states/current.json");
     const res = await response.json();
+    console.log(res);
     setAllStateData(res);
   }
 
@@ -49,6 +49,7 @@ const StateView = () => {
         </S.MetaRows>
         {stateHistory != null && 
         <S.Spacer>
+          <h1>Last 30 Days Positive Cases</h1>
           {<LineGraph data={stateHistory}/>}
         </S.Spacer>
       }

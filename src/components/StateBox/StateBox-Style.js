@@ -25,7 +25,6 @@ export const StateScroller = styled.div`
 
 export const State = styled.div`
   display: flex;
-  width: 100%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -55,4 +54,15 @@ export const StateName = styled.h5`
 
 export const Cases = styled.h5`
   font-size: 18px;
+`;
+
+export const SearchBox = styled.input`
+  width: 95%;
+  padding: 15px 10px;
+  margin: 2px;
+  box-sizing: border-box;
+  align-self: center;
+  border-style: none;
+  border: 1px solid gray;
+  border-radius: 10px;
 `;
