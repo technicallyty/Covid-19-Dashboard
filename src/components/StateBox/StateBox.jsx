@@ -31,13 +31,14 @@ const StateBox = ({data, updateStateData, updateHeader}) => {
       <S.StateScroller>
         { data != null &&
           stateJSON.map((val, idx) => {
+            let stateInfo = data.find(o => o.state.toLowerCase() === val.short)
             return (
               <S.State key={idx} onClick={() => {
                 stateClicked(val.short, val.id);
               }}>
                 <S.StateIcon src={val.image} alt="flag" />
                 <S.StateName>{val.id}</S.StateName>
-                <S.Cases>{data[idx].total.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</S.Cases>
+                <S.Cases>{stateInfo?.total.toLocaleString(navigator.language, { minimumFractionDigits: 0 })}</S.Cases>
               </S.State>
             )
           })

@@ -1,17 +1,12 @@
 const formatDate = (date) => {
-
   date = date.toString();
 
-  var year = date.substring(0,4);
-  var month = date.substring(4,6);
-  var day = date.substring(6,8);
-  var theDate = new Date(year, month-1, day);
 
-  var theYear = theDate.getFullYear();
-  var theMonth = theDate.getMonth();
-  var theDay = theDate.getDay();
+  let year = date.substr(2,2)
+  let month = date.substr(4,2)
+  let day = date.substr(6,2)
 
-  return theMonth + "/" + theDay + "/" + theYear;
+  return month + "/" + day + "/" + year;
 }
 
 export {formatDate};

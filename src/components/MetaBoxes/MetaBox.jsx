@@ -1,6 +1,7 @@
 import * as S from './MetaBox-Style.js';
 
 const MetaBox = ({stateData}) => {
+  console.log(stateData);
   return (
     <S.MicroContainer>
       <S.MicroBox bgcolor={"#01B3FF"} txtcolor={'white'}>

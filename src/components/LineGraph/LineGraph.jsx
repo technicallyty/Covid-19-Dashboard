@@ -11,7 +11,7 @@ import {
 import { formatDate } from "../../utilities/common.js";
 
 const LineGraph = ({ data }) => {
-
+  console.log(data);
   const [size, setSize] = useState(window.innerWidth);
 
   window.addEventListener('resize', function(e) {

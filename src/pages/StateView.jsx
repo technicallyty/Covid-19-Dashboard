@@ -25,7 +25,6 @@ const StateView = () => {
   const getAllStateData = async() => {
     const response = await fetch("https://api.covidtracking.com/v1/states/current.json");
     const res = await response.json();
-    console.log(res);
     setAllStateData(res);
   }
 
